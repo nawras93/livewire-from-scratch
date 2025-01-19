@@ -1,7 +1,5 @@
 <div>
-    <div>
-        Hello {{ $name }}!
-    </div>
+
 
 {{--    <div class="mt-4">--}}
 {{--        <input--}}
@@ -15,12 +13,27 @@
 {{--    </div>--}}
 
     <form
-        wire:submit="changeName(document.querySelector('#newName').value)"
+        wire:submit="changeName()"
     >
         <div class="mt-4">
+            <select
+                class="p-4 border rounded-md bg-gray-700 text-white"
+                wire:model.fill="greeting"
+            >
+                <option value="Hello">Hello</option>
+                <option value="Hi">Hi</option>
+                <option value="Hey">Hey</option>
+                <option value="Howdy" selected>Howdy</option>
+                <option value="Greetings">Greetings</option>
+                <option value="Bonjour">Bonjour</option>
+                <option value="Ciao">Ciao</option>
+            </select>
+
             <input
-                id="newName"
-                class="block w-full p-4 border rounded-md bg-gray-700 text-white" type="text">
+                type="text"
+                class="p-4 border rounded-md bg-gray-700 text-white"
+                wire:model.live.blur="name"
+            >
         </div>
         <div class="mt-4">
             <button
@@ -30,4 +43,10 @@
             </button>
         </div>
     </form>
+
+    @if($name !== '')
+        <div class="mt-4">
+            {{ $greeting }}, {{ $name }}!
+        </div>
+    @endif
 </div>
