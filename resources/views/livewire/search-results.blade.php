@@ -12,7 +12,10 @@
         @endif
         @foreach($results as $result)
             <div class="pt-2">
-                <a href="/articles/{{$result->id}}" class="text-white hover:bg-gray-700 hover:text-blue-900 rounded-md">
+                <a href="/articles/{{$result->id}}"
+                   class="text-white hover:bg-gray-700 hover:text-blue-900 rounded-md"
+                   wire:navigate
+                >
                     {{ $result->title }}
                 </a>
             </div>

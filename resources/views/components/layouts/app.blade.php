@@ -37,7 +37,8 @@
             </div>
         </div>
     </div>
-    <script>
+{{--    <script data-navigate-once>--}}
+    <script data-navigate-once>
         document.addEventListener('search:clear-results', () => {
             console.log('loaded');
         });
