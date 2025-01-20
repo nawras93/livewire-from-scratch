@@ -13,7 +13,7 @@
 {{--    </div>--}}
 
     <form
-        wire:submit="changeName()"
+        wire:submit="changeGreeting()"
     >
         <div class="mt-4">
             <select
@@ -34,6 +34,7 @@
                 class="p-4 border rounded-md bg-gray-700 text-white"
                 wire:model.live.blur="name"
             >
+            @error('name') <span class="text-red-500">{{ $message }}</span> @enderror
         </div>
         <div class="mt-4">
             <button
@@ -44,9 +45,9 @@
         </div>
     </form>
 
-    @if($name !== '')
+    @if($greetingMessage !== '')
         <div class="mt-4">
-            {{ $greeting }}, {{ $name }}!
+            {{ $greetingMessage }}
         </div>
     @endif
 </div>
