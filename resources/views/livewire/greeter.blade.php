@@ -20,13 +20,9 @@
                 class="p-4 border rounded-md bg-gray-700 text-white"
                 wire:model.fill="greeting"
             >
-                <option value="Hello">Hello</option>
-                <option value="Hi">Hi</option>
-                <option value="Hey">Hey</option>
-                <option value="Howdy" selected>Howdy</option>
-                <option value="Greetings">Greetings</option>
-                <option value="Bonjour">Bonjour</option>
-                <option value="Ciao">Ciao</option>
+                @foreach($greetings as $item)
+                    <option value="{{ $item->greeting }}" {{ $item->greeting === $greeting ? 'selected' : '' }}>{{ $item->greeting }}</option>
+                @endforeach
             </select>
 
             <input
