@@ -25,14 +25,14 @@
                 <nav
                     class="w-full grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3 border rounded-md p-2 bg-gray-100 dark:bg-gray-900">
                     <div class="flex justify-start lg:col-start-1 lg:col-span-2">
-                        <a class="ont-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+                        <a class="ont-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ml-4"
                            href="/">Home</a>
                         <a class="ont-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ml-4"
                            href="/dashboard">AdminDashboard</a>
+                        <a class="ont-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ml-4"
+                           href="/dashboard/articles">Articles</a>
                     </div>
-                    <div class="flex justify-end lg:col-start-3 lg:ml-auto">
-                        @livewire('search', ['placeholder' => 'test'])
-                    </div>
+
                 </nav>
 
                 <main class="mt-6">
