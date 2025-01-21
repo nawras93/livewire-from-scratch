@@ -23,7 +23,7 @@
         <div class="relative flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
             <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                 <nav
-                    class="w-full grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3 border rounded-md p-2 bg-gray-100 dark:bg-gray-900">
+                    class="w-full grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3  rounded-md p-2 bg-gray-100 dark:bg-gray-900">
                     <div class="flex justify-start lg:col-start-1 lg:col-span-2">
                         <a class="ont-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ml-4"
                            href="/">Home</a>

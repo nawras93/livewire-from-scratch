@@ -11,10 +11,11 @@ class ArticleCount extends Component
 {
     public $count = 0;
 
+    public $placeholderText = '';
     public function mount()
     {
         sleep('3');
-        $this->count = Article::count();
+        $this->count = Article::where('published', 1)->count();
     }
 
     public function placeholder()

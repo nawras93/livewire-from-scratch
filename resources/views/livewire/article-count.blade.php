@@ -1,3 +1,3 @@
-<div>
-    Article Count: {{$count}}
-</div>
+<span>
+    {{$count}}
+</span>
