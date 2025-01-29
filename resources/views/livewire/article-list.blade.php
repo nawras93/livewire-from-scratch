@@ -8,13 +8,21 @@
 
         <div>
             <button
-                wire:click="showAll()"
-                class="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+                wire:click="togglePublished(false)"
+                @class([
+                'hover:bg-blue-900 text-white font-bold py-2 px-4 rounded',
+                'bg-gray-500' => $showPublishedOnly,
+                'bg-blue-500' => !$showPublishedOnly
+                ])>
                 Show All
             </button>
             <button
-                wire:click="showPublished()"
-                class="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+                wire:click="togglePublished(true)"
+                @class([
+                'hover:bg-blue-900 text-white font-bold py-2 px-4 rounded',
+                'bg-blue-500' => $showPublishedOnly,
+                'bg-gray-500' => !$showPublishedOnly
+                ])>
                 Show Published (@livewire('article-count'))
             </button>
         </div>

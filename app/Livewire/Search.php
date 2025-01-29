@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class Search extends Component
 {
-//    #[Url(as: 'q', history: true, except: '')]
+    #[Url(as: 'q', history: true, except: '')]
     public $searchText = '';
 
     public $placeholder;
