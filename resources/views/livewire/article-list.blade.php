@@ -21,7 +21,7 @@
 {{--        @livewire('article-count', ['lazy' => true])--}}
     </div>
     <div class="my-4">
-        {{ $articles->links() }}
+        {{ $this->articles->links() }}
     </div>
     <table class="table-auto w-full border-collapse border border-gray-300 mt-4 mb-4">
         <thead>
@@ -30,7 +30,7 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($articles as $article)
+        @foreach($this->articles as $article)
             <tr wire:key="{{ $article->id }}" class="border-b bg-gray-800 border-gray-700">
                 <td class=" px-4 py-2"><a href="/articles/{{ $article->id }}">{{ $article->title }}</a></td>
                 <td class=" px-4 py-2 text-center">
@@ -49,6 +49,6 @@
         </tbody>
     </table>
     <div class="my-4">
-        {{ $articles->links() }}
+        {{ $this->articles->links() }}
     </div>
 </div>
