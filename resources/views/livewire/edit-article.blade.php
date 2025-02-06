@@ -1,5 +1,5 @@
 <div class="mx-auto mt-10">
-    <h1>Edit Article</h1>
+    <h1>Edit Article (ID: {{ $form->id }})</h1>
 {{--    <div wire:dirty>form data has changed</div>--}}
     <form wire:submit="save">
         <div class="mb-3">
