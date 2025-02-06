@@ -20,7 +20,11 @@ class EditArticle extends AdminComponent
     {
         $this->form->update();
 
-        $this->redirect('/dashboard/articles', navigate: true);
+//        $this->redirectIntended('/dashboard');
+
+        session()->flash('message', 'Article updated successfully.');
+
+        $this->redirect(ArticleList::class, navigate: true);
     }
 
     public function render()

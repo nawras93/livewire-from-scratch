@@ -28,6 +28,11 @@
         </div>
 {{--        @livewire('article-count', ['lazy' => true])--}}
     </div>
+    @if(session('message'))
+        <div class="bg-green-500 text-white p-4 rounded">
+            {{ session('message') }}
+        </div>
+    @endif
     <div class="my-4">
         {{ $this->articles->links() }}
     </div>

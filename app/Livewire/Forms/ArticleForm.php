@@ -10,6 +10,8 @@ use Livewire\Form;
 class ArticleForm extends Form
 {
     public ?Article $article;
+    #[Locked]
+    public int $id;
 
     #[Locked]
     public int $id;
