@@ -13,10 +13,12 @@ class ArticleForm extends Form
     #[Locked]
     public int $id;
 
+    #[Locked]
+    public int $id;
     #[Validate('required')]
-    public $title;
+    public $title = '';
     #[Validate('required')]
-    public $content;
+    public $content = '';
 
     public $published = false;
 
