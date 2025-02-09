@@ -16,6 +16,9 @@ class ArticleForm extends Form
     public $title = '';
     #[Validate('required')]
     public $content = '';
+    #[Validate('required|image')]
+    public $photo;
+    public $photo_path = '';
 
     public $published = false;
 
@@ -28,6 +31,7 @@ class ArticleForm extends Form
         $this->id = $article->id;
         $this->title = $article->title;
         $this->content = $article->content;
+        $this->photo_path = $article->photo_path;
         $this->published = $article->published;
         $this->notifications = $article->notifications ?? [];
         $this->allowNotifications = count($this->notifications) > 0;
@@ -43,7 +47,11 @@ class ArticleForm extends Form
             $this->notifications = [];
         }
 
-        Article::create($this->only('title', 'content', 'published', 'notifications'));
+        if ($this->photo) {
+            $this->photo_path = $this->photo->storePublicly('articles_photos', ['disk' => 'public']);
+        }
+
+        Article::create($this->only('title', 'content', 'published', 'notifications', 'photo_path'));
 
         cache()->forget('published-count');
     }
@@ -56,7 +64,11 @@ class ArticleForm extends Form
             $this->notifications = [];
         }
 
-        $this->article->update($this->only('title', 'content', 'published', 'notifications'));
+        if ($this->photo) {
+            $this->photo_path = $this->photo->storePublicly('articles_photos', ['disk' => 'public']);
+        }
+
+        $this->article->update($this->only('title', 'content', 'published', 'notifications', 'photo_path'));
 
         cache()->forget('published-count');
     }
