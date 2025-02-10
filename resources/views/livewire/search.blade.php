@@ -11,5 +11,10 @@
             >
         </div>
     </form>
-    @livewire('search-results', ['results' => $searchResults, 'show' => !empty($searchText)])
+    @if(!empty($searchText))
+        <div wire:transition>
+            @livewire('search-results', ['results' => $searchResults])
+        </div>
+    @endif
+
 </div>
